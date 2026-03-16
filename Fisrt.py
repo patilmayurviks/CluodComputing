@@ -1,32 +1,41 @@
-print("Hellow Worlds!")
-# calculator.py
 
-def calculator():
-    print("Simple Calculator")
-    print("Operations: +  -  *  /")
+def add(a, b):
+    return a + b
 
-    num1 = float(input("Enter first number: "))
-    operator = input("Enter operator (+, -, *, /): ")
-    num2 = float(input("Enter second number: "))
+def subtract(a, b):
+    return a - b
 
-    if operator == "+":
-        result = num1 + num2
-    elif operator == "-":
-        result = num1 - num2
-    elif operator == "*":
-        result = num1 * num2
-    elif operator == "/":
-        if num2 != 0:
-            result = num1 / num2
-        else:
-            print("Error: Division by zero")
-            return
-    else:
-        print("Invalid operator")
-        return
+def multiply(a, b):
+    return a * b
 
-    print("Result:", result)
+def divide(a, b):
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
 
 
-if __name__ == "__main__":
-    calculator()
+print("Simple Calculator")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+choice = input("Enter choice (1/2/3/4): ")
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+if choice == "1":
+    print("Result:", add(num1, num2))
+
+elif choice == "2":
+    print("Result:", subtract(num1, num2))
+
+elif choice == "3":
+    print("Result:", multiply(num1, num2))
+
+elif choice == "4":
+    print("Result:", divide(num1, num2))
+
+else:
+    print("Invalid choice")
